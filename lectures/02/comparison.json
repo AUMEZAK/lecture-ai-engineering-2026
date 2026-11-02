@@ -1,5 +1,4 @@
 {
-  "agent": "codex",
   "status": "verified",
   "config_differences": {
     "num_train_epochs": {

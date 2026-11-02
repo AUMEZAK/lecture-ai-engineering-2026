@@ -1,0 +1,67 @@
+{
+  "agent": "codex",
+  "status": "verified",
+  "config_differences": {
+    "num_train_epochs": {
+      "baseline": 20,
+      "variant": 10
+    }
+  },
+  "datasets_identical": true,
+  "versions_identical": true,
+  "before_metrics_identical": true,
+  "runs": {
+    "20": {
+      "before": {
+        "label": "before",
+        "n": 21,
+        "format_rate": 0.09523809523809523,
+        "content_rate": 0.0,
+        "both_rate": 0.0,
+        "seconds": 41.7
+      },
+      "after": {
+        "label": "after",
+        "n": 21,
+        "format_rate": 1.0,
+        "content_rate": 0.9047619047619048,
+        "both_rate": 0.9047619047619048,
+        "seconds": 42.0
+      },
+      "training": {
+        "seconds": 224.01,
+        "final_logged_loss": 0.014073306322097778,
+        "final_loss_step": 40,
+        "global_step": 40,
+        "epoch": 20.0
+      },
+      "regressed": []
+    },
+    "10": {
+      "before": {
+        "label": "before",
+        "n": 21,
+        "format_rate": 0.09523809523809523,
+        "content_rate": 0.0,
+        "both_rate": 0.0,
+        "seconds": 38.2
+      },
+      "after": {
+        "label": "after",
+        "n": 21,
+        "format_rate": 1.0,
+        "content_rate": 0.8095238095238095,
+        "both_rate": 0.8095238095238095,
+        "seconds": 42.3
+      },
+      "training": {
+        "seconds": 111.949,
+        "final_logged_loss": 0.0990263819694519,
+        "final_loss_step": 20,
+        "global_step": 20,
+        "epoch": 10.0
+      },
+      "regressed": []
+    }
+  }
+}

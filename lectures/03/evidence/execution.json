@@ -1,0 +1,40 @@
+{
+  "status": "complete",
+  "question": "LoRAとQLoRAの違いは？",
+  "repetitions_per_condition": 1,
+  "source_commit": "6989d9fcfa8a13ec570f66f9d027636eda0f7555",
+  "before_source_sha256": "76fe15419707e59d437d9f834b013a6b9c4c56ae7ad964a25dd94154abf9323e",
+  "after_source_sha256": "ed02b5cd40fc425ebec9d441393fccc7e2ddf2c3f0695bc9b2b0d01323bdf5fe",
+  "glossary_sha256": "4b614a08a754bf6cf714f905f185ad5ef22e0957c7e64434a4b418edb68c2319",
+  "model_environment": "course default",
+  "baseline_tests": "11 passed in 6.12s (terminal observation)",
+  "omnicampus_submitted_by_assistant": false,
+  "baseline": {
+    "command": [
+      "uv",
+      "run",
+      "python",
+      "-m",
+      "app.agent",
+      "--trace",
+      "LoRAとQLoRAの違いは？"
+    ],
+    "started_utc": "2026-11-09T02:20:38.510477+00:00",
+    "exit_code": 0,
+    "log_sha256": "edb41fd421d948926f2f5c9fd76be4c07b7ebf63a62d9bc276a8f8b70d3f7544"
+  },
+  "variant": {
+    "command": [
+      "uv",
+      "run",
+      "python",
+      "-m",
+      "app.agent",
+      "--trace",
+      "LoRAとQLoRAの違いは？"
+    ],
+    "started_utc": "2026-11-09T02:20:45.192734+00:00",
+    "exit_code": 0,
+    "log_sha256": "40a1eaa5f46905577b2fefb5eee35901b74ad2a9d60ac62c47010d2e578f3de6"
+  }
+}

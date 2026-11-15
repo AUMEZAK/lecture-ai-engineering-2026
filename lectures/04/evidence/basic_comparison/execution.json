@@ -1,0 +1,81 @@
+{
+  "status": "completed",
+  "source_commit": "bc41dfac203acff0706b7da10d09339d91830bfe",
+  "requested_model": "gemini-3.5-flash-lite",
+  "model_reported_by_cli": "gemini-3.5-flash-lite",
+  "server_model_version": "not exposed by course CLI",
+  "temperature": 0,
+  "repetitions_per_condition": 1,
+  "human_label_method": "提示された判定案を本人が各件ごとに確認したラベル。独立した盲検判定ではない。",
+  "changed_policy": "根拠: 用語集にないと明示した一般説明を許容する",
+  "fixed_hashes": {
+    "data/eval/lec04_cases.jsonl": "75d611503511caede2cfda3ac68b74e33a16c4275e548cbb40c73da4394374c5",
+    "data/glossary.json": "804a6ff955f550989a2b02a5f5c98e79ebae58c7c07fd20115d37465f70df204",
+    "lectures/04/labels.jsonl": "cf1688d45e38889069dd1831b2bebf0061da3c20985e0eb4e16a912f4c40183a",
+    "app/judge.py": "b49727b72eaa9a191924196d7b0c9a37b20378696c2045da16cb2a92122d39de",
+    "app/config.py": "1d589149a7421f2fb75c9dec3f49bf1cb9f1640d82104a9511ce91edc4c4cdaa",
+    "app/tools.py": "76fe15419707e59d437d9f834b013a6b9c4c56ae7ad964a25dd94154abf9323e",
+    "uv.lock": "dd3e258db9c737f0bd5975bfe1465984ac7c831daa8076c62e34b47835d986ff"
+  },
+  "started_utc": "2026-11-15T20:57:35.266512+00:00",
+  "runs": {
+    "baseline": {
+      "command": [
+        "/workspaces/lecture-ai-engineering-2026-lec04/.venv/bin/python",
+        "-m",
+        "app.judge",
+        "--model",
+        "gemini-3.5-flash-lite",
+        "--wait",
+        "5",
+        "--cases",
+        "data/eval/lec04_cases.jsonl",
+        "--labels",
+        "lectures/04/labels.jsonl",
+        "--rubric",
+        "data/eval/rubric.md",
+        "--out",
+        "lectures/04/evidence/basic_comparison/baseline.json"
+      ],
+      "started_utc": "2026-11-15T20:57:35.277355+00:00",
+      "rubric_sha256": "38b9f33a5ba0a93359ed78651b3048821c58f856d6a9839f79d8e90ba8bd5198",
+      "ended_utc": "2026-11-15T20:58:41.159626+00:00",
+      "elapsed_seconds": 65.882,
+      "exit_code": 0,
+      "log_sha256": "9db9bef92a78dbd0b0620aba9341adf34d9e4decd7b0295afe9bc2538a10c25c",
+      "result_sha256": "6074465f0193f52a0942916b41efb6ade466ebd86e5ec36a1a51b34dadf87acd"
+    },
+    "variant": {
+      "command": [
+        "/workspaces/lecture-ai-engineering-2026-lec04/.venv/bin/python",
+        "-m",
+        "app.judge",
+        "--model",
+        "gemini-3.5-flash-lite",
+        "--wait",
+        "5",
+        "--cases",
+        "data/eval/lec04_cases.jsonl",
+        "--labels",
+        "lectures/04/labels.jsonl",
+        "--rubric",
+        "data/eval/rubric.md",
+        "--out",
+        "lectures/04/evidence/basic_comparison/variant.json"
+      ],
+      "started_utc": "2026-11-15T20:58:41.161507+00:00",
+      "rubric_sha256": "12056a4ff9720d2d4f78ebdce50db063cad3b6bfa9d75ffc2876ba70cbea2ec4",
+      "ended_utc": "2026-11-15T20:59:44.363596+00:00",
+      "elapsed_seconds": 63.2,
+      "exit_code": 0,
+      "log_sha256": "8cbfc3e8116fd5602f01016a919858c56f05464201f7b35baba2a9991210d076",
+      "result_sha256": "f27578e57adcb0271d75aaa0bb3f9457fda87c7b6320393b3216868ad2a8b343"
+    }
+  },
+  "packages": {
+    "google-genai": "2.31.0",
+    "pydantic-ai-slim": "2.57.0"
+  },
+  "ended_utc": "2026-11-15T20:59:44.366057+00:00",
+  "rubric_after_sha256": "12056a4ff9720d2d4f78ebdce50db063cad3b6bfa9d75ffc2876ba70cbea2ec4"
+}

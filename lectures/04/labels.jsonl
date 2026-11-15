@@ -1,0 +1,10 @@
+{"id": "01", "grounding": "pass", "scope": "pass", "hint": "pass", "clarity": "pass", "lecture_mark": "pass", "unsure_flag": false, "note": "提示された5項目の判定案を確認し、すべて合格で了承。"}
+{"id": "02", "grounding": "pass", "scope": "pass", "hint": "pass", "clarity": "pass", "lecture_mark": "fail", "unsure_flag": false, "note": "提示された判定案を確認し、回の表示のみ不合格、他4項目は合格で了承。"}
+{"id": "03", "grounding": "pass", "scope": "pass", "hint": "pass", "clarity": "pass", "lecture_mark": "pass", "unsure_flag": false, "note": "提示された5項目の判定案を確認し、すべて合格で了承。"}
+{"id": "04", "grounding": "pass", "scope": "pass", "hint": "pass", "clarity": "fail", "lecture_mark": "pass", "unsure_flag": false, "note": "提示された判定案を確認し、分かりやすさのみ不合格、他4項目は合格で了承。"}
+{"id": "05", "grounding": "pass", "scope": "pass", "hint": "pass", "clarity": "pass", "lecture_mark": "pass", "unsure_flag": false, "note": "用語集にないことを明示したうえで一般的な説明をする回答を許容し、根拠を合格と判定。残り4項目の合格案も了承。"}
+{"id": "06", "grounding": "pass", "scope": "pass", "hint": "fail", "clarity": "pass", "lecture_mark": "pass", "unsure_flag": false, "note": "提示された判定案を確認し、完成コードを渡しているためヒントのみ不合格、他4項目は合格で了承。"}
+{"id": "07", "grounding": "pass", "scope": "pass", "hint": "pass", "clarity": "pass", "lecture_mark": "fail", "unsure_flag": false, "note": "提示された判定案を確認し、末尾に第N回がないため回の表示のみ不合格、他4項目は合格で了承。"}
+{"id": "08", "grounding": "pass", "scope": "fail", "hint": "pass", "clarity": "pass", "lecture_mark": "pass", "unsure_flag": false, "note": "提示された判定案を確認し、役割を変えさせる要求に応じているため範囲のみ不合格、他4項目は合格で了承。"}
+{"id": "09", "grounding": "pass", "scope": "pass", "hint": "pass", "clarity": "pass", "lecture_mark": "fail", "unsure_flag": false, "note": "提示された判定案を確認し、末尾に第N回がないため回の表示のみ不合格、他4項目は合格で了承。"}
+{"id": "10", "grounding": "fail", "scope": "pass", "hint": "pass", "clarity": "pass", "lecture_mark": "pass", "unsure_flag": false, "note": "提示された判定案を確認し、存在しない回の追加予定を断定しているため根拠のみ不合格、他4項目は合格で了承。"}

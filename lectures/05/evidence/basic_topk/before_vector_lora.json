@@ -1,0 +1,120 @@
+{
+  "run_id": "before_vector_lora",
+  "started_at": "2026-11-23T03:04:45.816496+00:00",
+  "question": "第2回の説明では、LoRAは何を固定し何を学習しますか？ QLoRAは何を加えますか？",
+  "mode": "vector",
+  "top_k": 5,
+  "model_requested": "gemini-3.5-flash-lite",
+  "temperature": "not explicitly set; unchanged SDK/API default",
+  "base_commit": "1ce722c2816b70ef62891a6378b2478af555e3fd",
+  "source_sha256": {
+    "app/config.py": "da94eb1bb1e73664989076e8e993dd2a10b2871fe30146e48acbae7e90e4e5c3",
+    "app/agent.py": "00764c1d37438bc9ad12d4e32844f327778756d8b52998ed1b5ef2cc2720e581",
+    "app/tools.py": "f0e2fb3c6345a12637c5bfb8362bba23630f49d9d9f753c4ed2c2efecf7a78e1",
+    "app/retrieval.py": "721a57b79b7194a626da61c376ca12c16295dcb36492c1714d199b793afbdeca",
+    "data/rag_data/lectures.json": "f6022c177ec1b5575b56d21307a5ae2aa09c586047398a17e1e4b86a56e99dce",
+    "data/rag_data/index.sqlite3": "600d7a3633d84c21b6b26d511f9cd701d7dbee32bfe8eab0fd6fee3affb0f69e",
+    "uv.lock": "9a9bcb5565777fee91a96a219019e3a42873e48166bdb5f96d2ed285d6dbe08b"
+  },
+  "cost_scope": "generation API estimate only; query embedding and index creation excluded",
+  "tool_calls": [
+    {
+      "name": "search_materials",
+      "arguments": {
+        "query": "LoRA QLoRA 固定 学習"
+      },
+      "call_id": "call_16778241421472203888"
+    }
+  ],
+  "tool_returns": [
+    {
+      "name": "search_materials",
+      "call_id": "call_16778241421472203888",
+      "error": null,
+      "pages": [
+        {
+          "page_id": "lec02-main-p052",
+          "document_id": "lec02-main",
+          "lecture": 2,
+          "document_title": "基盤モデルの仕組み",
+          "section": "選んだモデルを、いつ・どう直すか",
+          "title": "LoRA と QLoRA ：大きなモデルも GPU 1 台で調整できる",
+          "page": 52,
+          "distance": 0.2296837419271469,
+          "content_sha256": "5874fee556b3b0ea4ae2a572791d11048b554e48d9074936b7fd9d35e299d044",
+          "content_characters": 717
+        },
+        {
+          "page_id": "lec02-main-p051",
+          "document_id": "lec02-main",
+          "lecture": 2,
+          "document_title": "基盤モデルの仕組み",
+          "section": "選んだモデルを、いつ・どう直すか",
+          "title": "PEFT ：モデル全体ではなく、一部だけを学習する",
+          "page": 51,
+          "distance": 0.24355672299861908,
+          "content_sha256": "d2a043125fe674f0b9426763192a9fba54b4fb019359ed7b982a8c48f92a24a9",
+          "content_characters": 771
+        },
+        {
+          "page_id": "lec02-main-p060",
+          "document_id": "lec02-main",
+          "lecture": 2,
+          "document_title": "基盤モデルの仕組み",
+          "section": "選んだモデルを、いつ・どう直すか",
+          "title": "今日の演習： QLoRA で出力形式を矯正し、効果を測る",
+          "page": 60,
+          "distance": 0.267177551984787,
+          "content_sha256": "0e9c05c39bcc85303dd4f3aabb747a82997d2858398ccda722b31eddb24c654a",
+          "content_characters": 357
+        },
+        {
+          "page_id": "lec02-main-p061",
+          "document_id": "lec02-main",
+          "lecture": 2,
+          "document_title": "基盤モデルの仕組み",
+          "section": "選んだモデルを、いつ・どう直すか",
+          "title": "演習の進め方と提出物（仮）",
+          "page": 61,
+          "distance": 0.29299941658973694,
+          "content_sha256": "c0d3d48ef3e00d1f769a2012667ce9e7385bd67fc951dc3c4d21d557cfe7d59c",
+          "content_characters": 471
+        },
+        {
+          "page_id": "lec02-main-p047",
+          "document_id": "lec02-main",
+          "lecture": 2,
+          "document_title": "基盤モデルの仕組み",
+          "section": "選んだモデルを、いつ・どう直すか",
+          "title": "根拠と諸説：知識の追加は RAG が効きやすい",
+          "page": 47,
+          "distance": 0.29319456219673157,
+          "content_sha256": "66912245a40e43b5f4e1755bf5d51999c14f12920ef65374cfff62625194ec9d",
+          "content_characters": 640
+        }
+      ]
+    }
+  ],
+  "command": [
+    "uv",
+    "run",
+    "--frozen",
+    "python",
+    "-m",
+    "app.agent",
+    "--trace",
+    "第2回の説明では、LoRAは何を固定し何を学習しますか？ QLoRAは何を加えますか？"
+  ],
+  "measurement_method": "course CLI main; print_trace wrapper records result after timing; no extra model calls",
+  "answer": "講義資料によると、LoRAとQLoRAの仕組みについて以下のように説明されています。\n\n* **LoRAは何を固定し、何を学習するか**\n  * 元の重み（本体）は固定して学習せず、細長い2つの小さな行列の積で表される変化分（小さな行列 A・B / 追加部分）を学習します（第2回・PDF p.51, p.52）。\n\n* **QLoRAは何を加えるか**\n  * LoRAの手法に加えて、元の重みを4bit（数値を粗く保存）に圧縮する処理を加えます（第2回・PDF p.51, p.52）。",
+  "elapsed_seconds": 2.899433100000124,
+  "input_tokens": 3027,
+  "output_tokens": 168,
+  "model_requests": 2,
+  "generation_cost_usd": 0.0013281,
+  "model_names_returned": [
+    "gemini-3.5-flash-lite"
+  ],
+  "status": "ok",
+  "finished_at": "2026-11-23T03:04:48.722175+00:00"
+}

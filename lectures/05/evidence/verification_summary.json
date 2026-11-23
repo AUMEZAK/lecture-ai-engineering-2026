@@ -1,0 +1,26 @@
+{
+  "base_commit": "1ce722c2816b70ef62891a6378b2478af555e3fd",
+  "runs": 7,
+  "status": "pass",
+  "comparison": "RAG_TOP_K 5 to 2; identical questions, requested/returned model, data/index, instructions and implementation",
+  "retrieved_page_records_checked": 27,
+  "source_hashes": "pass; only config differs exactly as planned",
+  "log_metric_agreement": "pass",
+  "existing_tests_before": 17,
+  "existing_tests_after": 17,
+  "tests_modified": false,
+  "extra_api_calls_for_validation": 0,
+  "remaining_limitations": [
+    "one run per condition",
+    "two homework questions",
+    "uncontrolled API randomness and order",
+    "generation cost excludes query embedding"
+  ],
+  "answer_checks": {
+    "lora": "core requirements supported before and after",
+    "memory": "core requirements supported before and after; overstatement in before answer documented",
+    "tree": "free Colab wording not supported by cited page"
+  },
+  "runner_sha256": "6954419390bfb15d5033d960781d775e95895cf408e678fc9fc6b0a177681a0f",
+  "cost_log_precision": "CLI displays 6 decimal places; difference from stored SDK value is at most 0.0000005 USD"
+}

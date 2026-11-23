@@ -20,5 +20,7 @@
     "lora": "core requirements supported before and after",
     "memory": "core requirements supported before and after; overstatement in before answer documented",
     "tree": "free Colab wording not supported by cited page"
-  }
+  },
+  "runner_sha256": "6954419390bfb15d5033d960781d775e95895cf408e678fc9fc6b0a177681a0f",
+  "cost_log_precision": "CLI displays 6 decimal places; difference from stored SDK value is at most 0.0000005 USD"
 }

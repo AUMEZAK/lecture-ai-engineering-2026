@@ -1,0 +1,120 @@
+{
+  "run_id": "before_vector_memory",
+  "started_at": "2026-11-23T03:05:06.084204+00:00",
+  "question": "第3回の例では、コンパクションとセッションをまたぐメモリはどう違いますか。日々のメモはすべて長期メモリに入りますか",
+  "mode": "vector",
+  "top_k": 5,
+  "model_requested": "gemini-3.5-flash-lite",
+  "temperature": "not explicitly set; unchanged SDK/API default",
+  "base_commit": "1ce722c2816b70ef62891a6378b2478af555e3fd",
+  "source_sha256": {
+    "app/config.py": "da94eb1bb1e73664989076e8e993dd2a10b2871fe30146e48acbae7e90e4e5c3",
+    "app/agent.py": "00764c1d37438bc9ad12d4e32844f327778756d8b52998ed1b5ef2cc2720e581",
+    "app/tools.py": "f0e2fb3c6345a12637c5bfb8362bba23630f49d9d9f753c4ed2c2efecf7a78e1",
+    "app/retrieval.py": "721a57b79b7194a626da61c376ca12c16295dcb36492c1714d199b793afbdeca",
+    "data/rag_data/lectures.json": "f6022c177ec1b5575b56d21307a5ae2aa09c586047398a17e1e4b86a56e99dce",
+    "data/rag_data/index.sqlite3": "600d7a3633d84c21b6b26d511f9cd701d7dbee32bfe8eab0fd6fee3affb0f69e",
+    "uv.lock": "9a9bcb5565777fee91a96a219019e3a42873e48166bdb5f96d2ed285d6dbe08b"
+  },
+  "cost_scope": "generation API estimate only; query embedding and index creation excluded",
+  "tool_calls": [
+    {
+      "name": "search_materials",
+      "arguments": {
+        "query": "コンパクション セッション メモリ 長期メモリ 日々のメモ"
+      },
+      "call_id": "call_9314935255168435099"
+    }
+  ],
+  "tool_returns": [
+    {
+      "name": "search_materials",
+      "call_id": "call_9314935255168435099",
+      "error": null,
+      "pages": [
+        {
+          "page_id": "lec03-main-p039",
+          "document_id": "lec03-main",
+          "lecture": 3,
+          "document_title": "AIエージェント",
+          "section": "Part 6 メモリ",
+          "title": "実装例：Claude",
+          "page": 39,
+          "distance": 0.27119705080986023,
+          "content_sha256": "56d5907f13fe916bfa33cdcd6c511e86302b4d31220195557fbc17ed8b3d51ca",
+          "content_characters": 538
+        },
+        {
+          "page_id": "lec03-main-p065",
+          "document_id": "lec03-main",
+          "lecture": 3,
+          "document_title": "AIエージェント",
+          "section": "Appendix",
+          "title": "補足：メモリと Context Engineering の最新動向",
+          "page": 65,
+          "distance": 0.27148526906967163,
+          "content_sha256": "4e0b2c468c0ebbfc0ceb9ae5b0f5ae41b24b21ed052c509cdf02629884034522",
+          "content_characters": 633
+        },
+        {
+          "page_id": "lec03-main-p038",
+          "document_id": "lec03-main",
+          "lecture": 3,
+          "document_title": "AIエージェント",
+          "section": "Part 6 メモリ",
+          "title": "メモリがないと、毎回ゼロからやり直しになる",
+          "page": 38,
+          "distance": 0.27434733510017395,
+          "content_sha256": "046b3869541bc4416ea419e94e392831d6504e7c438cafea78f3ac979b2ad982",
+          "content_characters": 467
+        },
+        {
+          "page_id": "lec03-main-p040",
+          "document_id": "lec03-main",
+          "lecture": 3,
+          "document_title": "AIエージェント",
+          "section": "Part 6 メモリ",
+          "title": "実装例：OpenClaw",
+          "page": 40,
+          "distance": 0.2945256233215332,
+          "content_sha256": "0a184c54800d421ab2242dcb4d28f72443aab83dd136a7904fd8737c7dd4afdd",
+          "content_characters": 383
+        },
+        {
+          "page_id": "lec03-main-p013",
+          "document_id": "lec03-main",
+          "lecture": 3,
+          "document_title": "AIエージェント",
+          "section": "Part 2 エージェントを組み立てる",
+          "title": "メモリ",
+          "page": 13,
+          "distance": 0.30804893374443054,
+          "content_sha256": "66d9911abc51a19bd1d2b878bd116281a41d0d7430b928704684b684b69969f8",
+          "content_characters": 361
+        }
+      ]
+    }
+  ],
+  "command": [
+    "uv",
+    "run",
+    "--frozen",
+    "python",
+    "-m",
+    "app.agent",
+    "--trace",
+    "第3回の例では、コンパクションとセッションをまたぐメモリはどう違いますか。日々のメモはすべて長期メモリに入りますか"
+  ],
+  "measurement_method": "course CLI main; print_trace wrapper records result after timing; no extra model calls",
+  "answer": "第3回の講義資料に基づき、コンパクションとセッションをまたぐメモリの違い、および日々のメモの長期メモリへの保存について解説します。\n\n### 1. コンパクションとセッションをまたぐメモリの違い\n\n資料では、この2つは「効く範囲（保存される場所）」と「目的」が異なります（第3回・PDF p.39、p.65）。\n\n* **コンパクション（コンテキストの中 / 同じセッション）**\n  * **仕組み・目的**: 1つのセッションの中で、コンテキストの制限（上限）に対応するため、古い履歴を要約して詰める処理です（第3回・PDF p.39）。\n  * **特徴**: あくまで同じセッション内のコンテキスト（ループの中の履歴）の圧縮であり（第3回・PDF p.65）、セッションが終了すると引き継がれません。また、要約に置き換えた範囲に含まれていた細かい画像や文書などの情報は失われます（第3回・PDF p.65）。\n* **セッションをまたぐメモリ（外の保存先）**\n  * **仕組み・目的**: チャットのセッションや会話が終わっても情報を保持し、次回の新しいセッションやコンテキストに読み戻して使うための仕組みです（第3回・PDF p.13、p.39）。\n  * **特徴**: メモリツールや自動メモリ機能などを使って、ファイルやデータベースなどの外の保存先に書き出され、次回の会話の最初などに再注入されます（第3回・PDF p.39、p.65）。\n\n---\n\n### 2. 日々のメモはすべて長期メモリに入りますか？\n\n資料のOpenClawの実装例（第3回・PDF p.40）によると、**日々のメモがすべて長期メモリに入るわけではありません。**\n\n* **日々のメモ**: 毎日のやり取りや一度きりの調べものなどは、まず日々のメモ（例：`memory/日付.md`）に記録されます（第3回・PDF p.40）。\n* **長期メモリへの選別**: 毎晩自動で見直し（dreaming）が行われ、重複を除いて何度も出てくるテーマを探した上で、**「基準を超えたものだけ」**が長期メモリ（`MEMORY.md`）に移されます（第3回・PDF p.40）。\n* 一度きりの調べものなどは日々のメモに残るだけであり、すべてを蓄積すると古い情報や不要な情報で膨らんでしまうため、基準を満たした重要なものだけが長期メモリに残る設計になっています（第3回・PDF p.38、p.40）。",
+  "elapsed_seconds": 4.160402256999987,
+  "input_tokens": 2500,
+  "output_tokens": 607,
+  "model_requests": 2,
+  "generation_cost_usd": 0.0022675,
+  "model_names_returned": [
+    "gemini-3.5-flash-lite"
+  ],
+  "status": "ok",
+  "finished_at": "2026-11-23T03:05:10.250908+00:00"
+}

@@ -1,0 +1,154 @@
+{
+  "run_id": "before_tree_lora",
+  "started_at": "2026-11-23T03:05:27.598322+00:00",
+  "question": "第2回の説明では、LoRAは何を固定し何を学習しますか？ QLoRAは何を加えますか？",
+  "mode": "tree",
+  "top_k": 5,
+  "model_requested": "gemini-3.5-flash-lite",
+  "temperature": "not explicitly set; unchanged SDK/API default",
+  "base_commit": "1ce722c2816b70ef62891a6378b2478af555e3fd",
+  "source_sha256": {
+    "app/config.py": "da94eb1bb1e73664989076e8e993dd2a10b2871fe30146e48acbae7e90e4e5c3",
+    "app/agent.py": "00764c1d37438bc9ad12d4e32844f327778756d8b52998ed1b5ef2cc2720e581",
+    "app/tools.py": "f0e2fb3c6345a12637c5bfb8362bba23630f49d9d9f753c4ed2c2efecf7a78e1",
+    "app/retrieval.py": "721a57b79b7194a626da61c376ca12c16295dcb36492c1714d199b793afbdeca",
+    "data/rag_data/lectures.json": "f6022c177ec1b5575b56d21307a5ae2aa09c586047398a17e1e4b86a56e99dce",
+    "data/rag_data/index.sqlite3": "600d7a3633d84c21b6b26d511f9cd701d7dbee32bfe8eab0fd6fee3affb0f69e",
+    "uv.lock": "9a9bcb5565777fee91a96a219019e3a42873e48166bdb5f96d2ed285d6dbe08b"
+  },
+  "cost_scope": "generation API estimate only; query embedding and index creation excluded",
+  "tool_calls": [
+    {
+      "name": "browse_tree",
+      "arguments": {},
+      "call_id": "call_12087319625389513217"
+    },
+    {
+      "name": "browse_tree",
+      "arguments": {
+        "node_id": "lec02-main"
+      },
+      "call_id": "call_6922646826032296883"
+    },
+    {
+      "name": "browse_tree",
+      "arguments": {
+        "node_id": "lec02-main-s045"
+      },
+      "call_id": "call_1112549999993011726"
+    },
+    {
+      "name": "browse_tree",
+      "arguments": {
+        "node_id": "lec02-main-p052"
+      },
+      "call_id": "call_2523568602866486531"
+    }
+  ],
+  "tool_returns": [
+    {
+      "name": "browse_tree",
+      "call_id": "call_12087319625389513217",
+      "error": null,
+      "pages": [],
+      "tree_node_id": "aie2026-materials",
+      "children_ids": [
+        "lec01-main",
+        "lec02-main",
+        "lec03-main"
+      ]
+    },
+    {
+      "name": "browse_tree",
+      "call_id": "call_6922646826032296883",
+      "error": null,
+      "pages": [],
+      "tree_node_id": "lec02-main",
+      "children_ids": [
+        "lec02-main-p001",
+        "lec02-main-p002",
+        "lec02-main-p003",
+        "lec02-main-p004",
+        "lec02-main-p005",
+        "lec02-main-p006",
+        "lec02-main-s007",
+        "lec02-main-s019",
+        "lec02-main-s030",
+        "lec02-main-s045",
+        "lec02-main-s063"
+      ]
+    },
+    {
+      "name": "browse_tree",
+      "call_id": "call_1112549999993011726",
+      "error": null,
+      "pages": [],
+      "tree_node_id": "lec02-main-s045",
+      "children_ids": [
+        "lec02-main-p045",
+        "lec02-main-p046",
+        "lec02-main-p047",
+        "lec02-main-p048",
+        "lec02-main-p049",
+        "lec02-main-p050",
+        "lec02-main-p051",
+        "lec02-main-p052",
+        "lec02-main-p053",
+        "lec02-main-p054",
+        "lec02-main-p055",
+        "lec02-main-p056",
+        "lec02-main-p057",
+        "lec02-main-p058",
+        "lec02-main-p059",
+        "lec02-main-p060",
+        "lec02-main-p061",
+        "lec02-main-p062"
+      ]
+    },
+    {
+      "name": "browse_tree",
+      "call_id": "call_2523568602866486531",
+      "error": null,
+      "pages": [
+        {
+          "id": "lec02-main-p052",
+          "kind": "page",
+          "title": "LoRA と QLoRA ：大きなモデルも GPU 1 台で調整できる",
+          "document_id": "lec02-main",
+          "lecture": 2,
+          "document_title": "基盤モデルの仕組み",
+          "section": "選んだモデルを、いつ・どう直すか",
+          "page": 52,
+          "page_id": "lec02-main-p052",
+          "content_sha256": "5874fee556b3b0ea4ae2a572791d11048b554e48d9074936b7fd9d35e299d044",
+          "content_characters": 717
+        }
+      ],
+      "tree_node_id": "lec02-main-p052",
+      "children_ids": []
+    }
+  ],
+  "command": [
+    "uv",
+    "run",
+    "--frozen",
+    "python",
+    "-m",
+    "app.agent",
+    "--tree",
+    "--trace",
+    "第2回の説明では、LoRAは何を固定し何を学習しますか？ QLoRAは何を加えますか？"
+  ],
+  "measurement_method": "course CLI main; print_trace wrapper records result after timing; no extra model calls",
+  "answer": "第2回講義資料（PDF p.52）によると、LoRAとQLoRAの仕組みは以下のようになっています。\n\n* **LoRA（Low-Rank Adaptation）**\n  * **何を固定するか：** 元のモデルの重み（$W$）はすべて**固定**し、学習しません。\n  * **何を学習するか：** 元の重みに対する小さな「差分」（低ランクの行列 $A, B$）だけを**学習**します（全体の1%未満に抑えることも可能です）。\n\n* **QLoRA（Quantized LoRA）**\n  * **何を加えるか：** LoRAの仕組みに加えて、元の重みを **4bit に量子化（圧縮）** してメモリ使用量を大幅に削減する仕組みを**加え**ます。これにより、GPU1台（無料のGoogle Colab環境など）でも、数十億パラメータ級の大きなモデルを効率よく微調整（Fine-Tuning）できるようになります。\n\n（参考：第2回・PDF p.52）",
+  "elapsed_seconds": 5.817988697000146,
+  "input_tokens": 9214,
+  "output_tokens": 312,
+  "model_requests": 5,
+  "generation_cost_usd": 0.0035442,
+  "model_names_returned": [
+    "gemini-3.5-flash-lite"
+  ],
+  "status": "ok",
+  "finished_at": "2026-11-23T03:05:33.422746+00:00"
+}

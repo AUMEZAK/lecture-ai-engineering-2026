@@ -1,0 +1,45 @@
+{
+  "run_id": "before_full-context_lora",
+  "started_at": "2026-11-23T03:04:25.568021+00:00",
+  "question": "第2回の説明では、LoRAは何を固定し何を学習しますか？ QLoRAは何を加えますか？",
+  "mode": "full-context",
+  "top_k": 5,
+  "model_requested": "gemini-3.5-flash-lite",
+  "temperature": "not explicitly set; unchanged SDK/API default",
+  "base_commit": "1ce722c2816b70ef62891a6378b2478af555e3fd",
+  "source_sha256": {
+    "app/config.py": "da94eb1bb1e73664989076e8e993dd2a10b2871fe30146e48acbae7e90e4e5c3",
+    "app/agent.py": "00764c1d37438bc9ad12d4e32844f327778756d8b52998ed1b5ef2cc2720e581",
+    "app/tools.py": "f0e2fb3c6345a12637c5bfb8362bba23630f49d9d9f753c4ed2c2efecf7a78e1",
+    "app/retrieval.py": "721a57b79b7194a626da61c376ca12c16295dcb36492c1714d199b793afbdeca",
+    "data/rag_data/lectures.json": "f6022c177ec1b5575b56d21307a5ae2aa09c586047398a17e1e4b86a56e99dce",
+    "data/rag_data/index.sqlite3": "600d7a3633d84c21b6b26d511f9cd701d7dbee32bfe8eab0fd6fee3affb0f69e",
+    "uv.lock": "9a9bcb5565777fee91a96a219019e3a42873e48166bdb5f96d2ed285d6dbe08b"
+  },
+  "cost_scope": "generation API estimate only; query embedding and index creation excluded",
+  "tool_calls": [],
+  "tool_returns": [],
+  "command": [
+    "uv",
+    "run",
+    "--frozen",
+    "python",
+    "-m",
+    "app.agent",
+    "--full-context",
+    "--trace",
+    "第2回の説明では、LoRAは何を固定し何を学習しますか？ QLoRAは何を加えますか？"
+  ],
+  "measurement_method": "course CLI main; print_trace wrapper records result after timing; no extra model calls",
+  "answer": "ご質問ありがとうございます。\n\nLoRAとQLoRAの学習対象および仕組みの違いについては、以下の資料に記載されています。\n\n- **資料:** `lec02-main / 基盤モデルの仕組み`\n- **PDFページ番号:** \n  - LoRAの仕組みについて：PDF p.52（「LoRA と QLoRA ：大きなモデルも GPU 1 台で調整できる」）\n  - QLoRAの仕組みについて：PDF p.51〜p.52（「PEFT：モデル全体ではなく、一部だけを学習する」「LoRA と QLoRA」）\n\n具体的な考え方やヒントについては、以下の資料の記載をご参照ください。\n\n- **LoRAが固定するものと学習するもの:**\n  - モデルの本体（元の重み）はそのまま**固定**し、更新しません。\n  - その代わりに、変化分を表す小さな行列（追加部分）だけを学習します（付箋を書き足すようなイメージです）。\n- **QLoRAが加えるもの:**\n  - 基本的な考え方はLoRAと同じですが、固定する「元の重み」をさらに**4bitに圧縮（量子化）**してメモリを節約する点が加わります。\n\n詳細な図解や説明については、上記の指定ページをご確認ください。",
+  "elapsed_seconds": 2.8393623079998633,
+  "input_tokens": 117025,
+  "output_tokens": 278,
+  "model_requests": 1,
+  "generation_cost_usd": 0.00484646,
+  "model_names_returned": [
+    "gemini-3.5-flash-lite"
+  ],
+  "status": "ok",
+  "finished_at": "2026-11-23T03:04:28.413577+00:00"
+}

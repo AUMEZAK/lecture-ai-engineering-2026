@@ -1,0 +1,25 @@
+{
+  "baseline_commit": "03d0fd36d58ada1ac1366c0d485ac103ef44ca52",
+  "question": "第2回では何を学びますか？",
+  "call": "[tool call]   glossary_get_lecture_summary({'lecture': 2})",
+  "input_tokens": 1274,
+  "output_tokens": 248,
+  "model_responses": 2,
+  "configured_model": "gemini-3.5-flash-lite",
+  "actual_response_model_name": null,
+  "tests_before": "21 passed in 4.11s",
+  "tests_after": "21 passed in 3.88s",
+  "protected_files_unchanged": true,
+  "returned_preview_matches_lecture_02": true,
+  "secret_scan_passed": true,
+  "sha256": {
+    "tools_before.txt": "2a012393cb7d691db0847b71618a05debe4c5f6bdeb0ed164261fa3b2af2a7e9",
+    "tools_after.txt": "b12080f01e671a1e69de3febc9df2c223de8759c2e4786e74ab559087c0d4c62",
+    "implementation.diff": "b658fe4e14823c4fdd611cea88214b966deca5241e246e7a8d2f94bfc5e91eda",
+    "status_implementation.txt": "aa05dbc9a7dfb15cb69936d181622e3e986bdec028e0282e2a30dd192015a6bc",
+    "tests_after.txt": "6b45070ec1bf4eacd190f4f24121b0594fe53587fd53b8155ab3dd6f62967815",
+    "tests_before.txt": "3f697c12262437e96186a7f566bda4c55e56e1ee060a723e7a3c98af51473aab",
+    "run.json": "10f3694e6a6be14ca635c9e7c313123512e25a516fbc54334f1aa9a822d32f1a",
+    "trace_after.txt": "7019697e7f119fd73d9656e22fa037ae104d3a878a52112081054a760b6b2a80"
+  }
+}
